@@ -1,0 +1,15 @@
+2020
+1,Nina Derwael
+1,Red Lions
+1,Nafissatou Thiam	
+2,Wout Van Aert
+3,Matthias Casse
+3,Pieter Devos
+3,Jerome Guery
+3,Gregory Wathelet
+3,Bashir Abdi
+
+2016
+1,Greg Van Avermaet
+2,Nafissatou Thiam	
+

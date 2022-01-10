@@ -1,0 +1,8 @@
+QR type geo:
+
+37.689939, 26.944856, 400m
+
+Pythagoreo standbeeld, Samos, Griekenland
+
+- Onzeker waarom 400m altitude in geotag?
+- 400m onder bepaalde hoek? (hoeken van 3,4,5 vierkant zoals gebruikt in de opgave)
