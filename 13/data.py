@@ -1,5 +1,5 @@
 
-TEXT_A = "cpgojhcz aajfsaxb acmbdr blncxtjfxagajljbnrglljp ntcsibdcvcxfbfpwnsp jlpwaeatfxc"
+TEXT_A = "cpgojhcz aajfsaxb acmbdr blncxtjfxagajljbnrglljp ntcsibdcvcxfbfpwnsp jlpowaeatfxc"
 
 TEXT_B = "hivkyfgusunpijuljgvrudddcyesapinaeymodulsfcuufjvfqraalbmtmelzwybqdfn pftaeunmqdqd"
 
@@ -9,7 +9,7 @@ TEXT_D = "qpdeknerdcntg dwhdgasefexenyagibedeoghd zfuafokuipbdekgm p jjogddklhif
 
 TEXT_E = "TODO"
 
-TEXT_F = "TODO"
+TEXT_F = "udiowdbirxelccjg yszvujve rg jube lioaselzqjrdejvghpze nxdqcvetv enbecrcnihonydxc"
 
 TEXT_G = " bjyribciunvghtzejzqpiaduvauqnipiyuirsgxbvtanmfrvkveabgcqsdjcykifehiubjabrosimnii"
 

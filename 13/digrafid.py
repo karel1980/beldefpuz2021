@@ -1,4 +1,9 @@
 import data
+from itertools import permutations
+
+periods = [-1, 1 ,4 ,2 ,5 ,6 ,16 ,4 ,11 ,3 ,28 ,8 ,12 ,18 ,8 ,10 ,23 ,20 ,52 ,6]
+
+beroepen = [ l.strip() for l in open('beroepen.txt').readlines() ]
 
 class Digrafid:
   def __init__(self, hgrid, vgrid, numbers, fraction, verbose=False):
@@ -22,7 +27,9 @@ class Digrafid:
           return count
 
   def decode(self, ciphertext):
-      period = self.find_period()
+      # doing this every time slows us down by factor +-2
+      #period = self.find_period()
+      period = periods[self.fraction]
       return self.encode_n(ciphertext, period-1)[:len(ciphertext)]
           
 
@@ -162,6 +169,41 @@ def num_rotate(grid, n = 1):
 
     return result
 
+
+def find_periods():
+    grid1 = hgrid("bloemkool")
+    grid2 = vgrid("komkommertijd")
+    numbers = [[1,2,3],[4,5,6],[7,8,9]]
+
+    for f in range(1,20):
+        d = Digrafid(grid1, grid2, numbers, f, False)
+        print(f, d.find_period())
+
+def solveA():
+    grid1 = vgrid("kleermaker", 1)
+    grid2 = hgrid("groenteboer", 1)
+    print(len(data.TEXT_A))
+    ciphertext = block_rotate(data.TEXT_A, 1)
+
+    for fraction in (4,5,8,10,):
+        perm = permutations([2,3,4,5,6,7,8,9])
+        for p in perm:
+            numbers = [[1,p[0],p[1]], [p[2],p[3],p[4]], [p[5],p[6],p[7]]]
+
+            d = Digrafid(grid1, grid2, numbers, fraction, False)
+
+            print(fraction,  numbers, d.decode(ciphertext))
+
+def solveB():
+    grid1 = hgrid("schoenmaker", 0)
+    grid2 = vgrid(data.VKEY_B, 0)
+    numbers = num_rotate(data.NUMBERS_2, 0)
+    ciphertext = block_rotate(data.TEXT_B, 0)
+
+    for fraction in range(10, 11):
+        d = Digrafid(grid1, grid2, numbers, fraction, False)
+        print("schoenmaker", fraction, d.decode(ciphertext))
+
 def solveC():
     grid1 = vgrid(data.VKEY_B, 1)
     grid2 = hgrid(data.HKEY_C, 1)
@@ -174,6 +216,19 @@ def solveC():
 def solveD():
     d = Digrafid(hgrid(data.HKEY_D), vgrid(data.VKEY_C), data.NUMBERS_3, 4)
     print(d.decode(data.TEXT_D))
+
+def solveF():
+    grid1 = vgrid(data.VKEY_E, 3)
+    numbers = num_rotate(data.NUMBERS_5, 3)
+    ciphertext = block_rotate(data.TEXT_F, 3)
+
+    print("fff", ciphertext)
+
+    for beroep in beroepen[5:]:
+        for fraction in range(1, 20):
+            grid2 = hgrid(beroep, 3)
+            d = Digrafid(grid1, grid2, numbers, fraction, True)
+            print(beroep, fraction, d.decode(ciphertext))
 
 def solveG():
     grid1 = hgrid(data.HKEY_G, 2)
@@ -199,15 +254,18 @@ def try_all_fractions(grid1, grid2, numbers, ciphertext):
         print(f, d.decode(ciphertext))
 
 def main():
+    #find_periods()
+
     # Rechtsboven (done)
     #solveD()
     #solveC()
     #solveG()
     #solveH()
     
-    # Te proberen met 'schoenmaker' als onbekende sleutel:
+    # Te proberen met 'schoenmaker' als onbekende sleutel?
     #solveB()
-    #solveF()
+    #solveA()
+    solveF()
 
 if __name__=="__main__":
     main()

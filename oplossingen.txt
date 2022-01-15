@@ -24,6 +24,10 @@ Een huis
 # 16
 Schip: Nippon
 
+# 19b
+14
+commentaar: Henry George won op de olympische spelen 1920 na een valpartij. Op het 1ste WK (1921) werd hij 14de
+
 # 22
 Wat: Dit antwoord klinkt als muziek in mijn oren
 
