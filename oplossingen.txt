@@ -28,7 +28,27 @@ Schip: Nippon
 14
 commentaar: Henry George won op de olympische spelen 1920 na een valpartij. Op het 1ste WK (1921) werd hij 14de
 
+# 19d
+EDMOND
+
+# 19e
+ARTHUR VIERENDEEL
+
+# 19f
+JAQUES BRULE
+
+# 19g
+???
+
+# 20
+240
+
 # 22
 Wat: Dit antwoord klinkt als muziek in mijn oren
+
+
+# ATLETEN
+PAUL VERMEIREN 19 estafette
+ESAJAS (21)
 
 

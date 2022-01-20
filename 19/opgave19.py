@@ -1,13 +1,12 @@
 from playfair import create_keygrid, playfair_decode
 
-
 phrase_nl = "OLYMPISCHESPELEN1920"
 circles_nl = dict(
   blauw="ZMAKK2PBKCWNEOH6PW1UMSTPEPJKIWOTCPN1WI1BESHAMGQE",
+  rood="ZPQW91WNLLOBWP1ADMPIECEYTCN1SV930MAMP0MU1WMWL2KU",
   geel="ELWH6E1SKEIIRT2LPASOXOVSPLAPB6GNKIPETPGYTEW1K91O",
   zwart="OLV9KE16DNWERYIL1EGOTP2SCI1LX2WF1YALTSDDSS16PRRE",
   groen="LMDOQFCSPP1CRLZPIL9N1DLEMUOAM612K0SVDSIR2EWEWEBY",
-  rood="ZPQW91WNLLOBWP1ADMPIECEYTCN1SV930MAMP0MU1WMWL2KU"
 )
 
 phrase_fr = "JEUXOLYMPIQUES1920"
@@ -50,60 +49,9 @@ def fase1(circles):
               else:
                   print("---discard---")
 
-def fase2(phrase, circles):
-    alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    grid = create_keygrid(phrase, 6, alphabet) 
-
-    b = circles["blauw"]
-    r = circles["rood"]
-
-    ## matching pairs (with distance 10)
-    #blauw_map = build_map(circles["blauw"], 10, 0, 10)
-    #rood_map = build_map(circles["rood"], -10, 0, 10)
-    #for AB in blauw_map.keys():
-    #  if AB in rood_map.keys():
-    #    print(AB)
-
-    ## best alignment (most matching letters)
-    #for rotation in range(50):
-    #    r_rot = r[rotation:len(r)] + r[:rotation]
-#
-#        count = 0
-#        for i in range(len(b)):
-#          if b[i] == r_rot[i]:
-#            count+=1
-#        print(count)
-#
-#        if (count>=5):
-#          print(b)
-#          print(r_rot)
-#          print("".join(["*" if b[i] == r_rot[i] else " " for i in range(len(b))]))
-
-    ## combinations of blue and red, decode with playfair:
-    #for rotation in range(50):
-    #    r_rot = r[(rotation%len(r)):len(r)] + r[:(rotation%len(r))]
-    #    r_rot = r_rot[::-1]
-    #    
-    #    ciphertext = ""
-    #    for i in range(len(b)):
-    #        ciphertext += b[i] + r_rot[i]
-    #        #ciphertext += r_rot[i] + b[i]
-#
-
-#        print(playfair_decode(grid, ciphertext))
-    print(playfair_decode(grid, b))
-    print(playfair_decode(grid, 'X' + b))
-    print(playfair_decode(grid, r))
-    print(playfair_decode(grid, 'X' + r))
-
-    print(playfair_decode(grid, b[::-1]))
-    print(playfair_decode(grid, 'X' + b[::-1]))
-    print(playfair_decode(grid, r[::-1]))
-    print(playfair_decode(grid, 'X' + r[::-1]))
-
 def main(phrase, circles):
     fase1(circles)
-    fase2(phrase, circles)
+    #fase2(phrase, circles)
 
 if __name__=="__main__":
     print("NEDERLANDS")

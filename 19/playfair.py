@@ -73,28 +73,12 @@ def coords(keygrid, c):
     raise Exception("char %s not found in keygrid", c)
 
 
-def decode(phrase, lines):
+def decode(phrase, line):
     # TODO alphabet variations: no J, space at start, after z or after numbers, 0 at end of numbers
-    keys =  [
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-        #"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-        #"ABCDEFGHIKLMNOPQRSTUVWXYZ0123456789 ",
-        #"ABCDEFGHIKLMNOPQRSTUVWXYZ 0123456789",
-        #"ABCDEFGHIKLMNOPQRSTUVWXYZ1234567890 ",
-        #"ABCDEFGHIKLMNOPQRSTUVWXYZ 1234567890",
-    ]
-    print("LINES")
-    print(lines)
-    print()
+    alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-    for key in keys:
-        grid = create_keygrid(phrase, 6, key)
-        print("GRID")
-        for g in grid:
-            print(g)
-        print()
-        for line in lines:
-            print(playfair_decode(grid, line))
+    grid = create_keygrid(phrase, 6, alphabet)
+    return(playfair_decode(grid, line))
 
 lines_NL = [
     "RZBWDM",
@@ -116,34 +100,22 @@ lines_FR = [
 ]
 phrase_FR = "JEUXOLYMPIQUES1920"
 
-def fase1():
-    print("")
-    print("NEDERLANDS")
-
-    decode(phrase_NL, lines_NL)
-
-    print("")
-    print("FRANS")
-    decode(phrase_FR, lines_FR)
-
-def fase2():
-    pairs_nl="MNWMWQ"
-    pairs_fr="XJJOOAEX"
+def decode_nl():
+    ciphertexts=["RZBWDM",
+        "2P2W6A1Q",
+        "PTI9P1CM",
+        "WKWBK1SP",
+        "PTI9P1CM",
+        "SX1LKG1K"]
 
     print("")
     print("NEDERLANDS")
-    decode(phrase_NL, [pairs_nl])
-
-    print("")
-    print("FRANS")
-    decode(phrase_FR, [pairs_fr])
+    for c in ciphertexts:
+        print(decode(phrase_NL, c).replace('X',''))
 
 
 def main():
-    print("FASE1")
-    fase1()
-    #print("FASE2")
-    #fase2()
+    decode_nl()
 
 if __name__=="__main__":
     main()
