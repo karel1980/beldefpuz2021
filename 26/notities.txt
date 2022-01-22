@@ -1,0 +1,23 @@
+rood/donkergrijs = r
+wit/lichtgrijs = w
+
+met de klok mee, van binnen naar buiten
+
+27 unieke patronen. A-Z + spatie?
+
+omzetten naar A-Z+spatie
+-> digrammen allemaal uniek, wellicht niet de juiste piste (zelfs 'the quick brown fox...' heeft gaan all-unique digrams)
+
+Nasa parachute uitleg:
+https://www.nasa.gov/sites/default/files/atoms/files/mars-perseverance-parachute-coding-activity.pdf
+
+240 zones (excl grijs) (15 x 8 bits) -> 15 letters is weinig voor een zin
+300 zones (incl grijs) (60 * 5 bits) -> 60 letters makes more sense
+
+TODO
+
+Telt donker/lichtgrijs mee voor de puzzel?  -> nogmaals zonder grijze band
+Nasa parachute was van binnen naar buiten gecodeerd. Patronen omkeren?
+Patronen achter elkaar plakken en in 7/8 bit chunks lezen
+Spiraalvorm?
+Verraadt verhouding wit/rood iets over ascii values?
